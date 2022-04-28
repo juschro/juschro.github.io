@@ -1,0 +1,87 @@
+#slidertext {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+#settings1 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -60px;
+}
+.kntsetter {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 37.5px;
+  width: 175px;
+}
+.degsetter {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 37.5px;
+  width: 175px;
+}
+#setter {
+  font-size: 40px;
+  background-color: #007cf8;
+}
+#settings2 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 700;
+}
+.knotslider {
+  margin-right: 60px;
+  margin-left: 70px;
+}
+#knotslider {
+  cursor: pointer;
+  transform: scale(1.75);
+  display: block;
+  outline: none;
+  border: none !important;
+}
+.degslider {
+  margin-left: 60px;
+  margin-right: 70px;
+}
+#degslider {
+  cursor: pointer;
+  transform: scale(1.75);
+  display: block;
+  outline: none;
+  border: none !important;
+}
+.btns {
+  width: 150px;
+  height: 50px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background: #f77062;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  align-self: top;
+  font-weight: 700;
+}
+@media (hover: hover) {
+  #knotslider:hover {
+    transform: scale(1.85);
+    transition: all 0.3s ease;
+  }
+  #degslider:hover {
+    transform: scale(1.85);
+    transition: all 0.3s ease;
+  }
+  .btns:hover {
+    transform: scale(1.05);
+    background: #3c8d27;
+    transition: all 0.3s ease;
+  }
+  #setter:hover {
+    background-color: #0061c3;
+    transform: scale(1.3);
+    transition: all 0.3s ease;
+  }
+}

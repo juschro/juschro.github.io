@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Spots</title>
+    <meta charset="UTF-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/wind-solid.svg" />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/bootstrap/css/bootstrap.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/select2/select2.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/perfect-scrollbar/perfect-scrollbar.css"
+    />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="images.css" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="settings.css" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="add.css" />
+    <!--===============================================================================================-->
+    <!-- TEST LOGIN -->
+    <link rel="stylesheet" type="text/css" href="Login/login.css" />
+    <!-- TEST LOGIN -->
+    <script
+      src="https://kit.fontawesome.com/1d9ff175a7.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="limiter">
+      <div class="container-table100">
+        <!-- TEST LOGIN -->
+        <button
+          class="loginbtns"
+          id="loginbtn"
+          onclick="document.getElementById('id01').style.display='block'"
+          style="width: auto"
+        >
+          Login
+        </button>
+        <div id="id01" class="modal">
+          <form class="modal-content animate">
+            <div class="imgcontainer">
+              <span
+                onclick="document.getElementById('id01').style.display='none'"
+                class="close"
+                title="Close Modal"
+                >&times;</span
+              >
+            </div>
+            <div class="container">
+              <label for="uname"><b>Username</b></label>
+              <input
+                id="logintext"
+                type="text"
+                placeholder="Enter Username"
+                name="uname"
+                required
+              />
+              <label for="psw"><b>Password</b></label>
+              <input
+                id="passwordtext"
+                type="password"
+                placeholder="Enter Password"
+                name="psw"
+                required
+              />
+              <button class="loginbtns" id="innerloginbtn" type="button">
+                Working soon!
+              </button>
+              <label>
+                <input type="checkbox" checked="checked" name="remember" />
+                Remember me
+              </label>
+            </div>
+            <div class="container" style="background-color: #f1f1f1">
+              <button
+                type="button"
+                onclick="document.getElementById('id01').style.display='none'"
+                class="cancelbtn"
+              >
+                Cancel
+              </button>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+          </form>
+        </div>
+        <!-- TEST LOGIN -->
+        <!-- Test Add -->
+        <div class="add">
+          <button class="btns" id="addbtn">Add Spot</button>
+          <div class="inputter">
+            <input
+              type="text"
+              class="form__input"
+              id="name"
+              placeholder="Spotname"
+              onfocus="this.value=''"
+              required=""
+            />
+            <label for="name" class="form__label">Spotname</label>
+          </div>
+        </div>
+        <!-- Test Add -->
+        <div class="wrap-table100">
+          <div id="settings">
+            <div id="settings1">
+              <div class="kntsetter">
+                <button id="kntleft">
+                  <i id="setter" class="fa-solid fa-caret-left"></i>
+                </button>
+                <button id="kntright">
+                  <i id="setter" class="fa-solid fa-caret-right"></i>
+                </button>
+              </div>
+              <div class="degsetter">
+                <button id="degleft">
+                  <i id="setter" class="fa-solid fa-caret-left"></i>
+                </button>
+                <button id="degright">
+                  <i id="setter" class="fa-solid fa-caret-right"></i>
+                </button>
+              </div>
+            </div>
+            <div id="settings2">
+              <button class="btns" id="applybtn">Apply Settings</button>
+              <div class="knotslider">
+                <!-- set value in resetBtn (dash.js) -->
+                <input
+                  type="range"
+                  min="5"
+                  max="50"
+                  value="14"
+                  step="1"
+                  id="knotslider"
+                  orient="horizontal"
+                  onclick="this.nextElementSibling.value = this.value"
+                  oninput="this.nextElementSibling.value = this.value"
+                />
+                <output id="slidertext"></output>
+                <label for="knotslider" id="slidertext">knots</label>
+              </div>
+              <div class="degslider">
+                <!-- set value in resetBtn (dash.js) -->
+                <input
+                  type="range"
+                  min="0"
+                  max="50"
+                  value="0"
+                  step="1"
+                  id="degslider"
+                  orient="horizontal"
+                  onclick="this.nextElementSibling.value = this.value"
+                  oninput="this.nextElementSibling.value = this.value"
+                />
+                <output id="slidertext"></output>
+                <label for="degslider" id="slidertext">deg offset</label>
+              </div>
+              <button class="btns" id="resetbtn">Reset Settings</button>
+            </div>
+          </div>
+          <div class="table100">
+            <table>
+              <thead>
+                <tr class="table100-head">
+                  <th class="column1">Spot</th>
+                  <th class="column2"></th>
+                  <th class="column3"></th>
+                  <th class="column4"></th>
+                  <th class="column5"></th>
+                  <th class="column6"></th>
+                </tr>
+              </thead>
+              <tbody id="tablebody">
+                <tr>
+                  <td class="column1">
+                    <div class="spots">
+                      <a
+                        href="https://www.google.de/maps/place/Kitespot+Kornwerderzand/@53.0732891,5.3402871,16.75z/data=!4m13!1m7!3m6!1s0x47c8c486da7d9fb3:0xe9e925cc62a64080!2sKornwerderzand,+Niederlande!3b1!8m2!3d53.0726456!4d5.337913!3m4!1s0x47c8c32fcb8132db:0xe0ec475a52319a2b!8m2!3d53.0749297!4d5.3441459?hl=de"
+                        target="_blank"
+                        >Kornwerderzand</a
+                      >
+                      <div class="logoimages">
+                        <a href="https://www.windguru.cz/500867" target="_blank"
+                          ><img
+                            src="images/windguru.png"
+                            class="windguru"
+                            alt="Windguru"
+                        /></a>
+                        <a
+                          href="https://de.windfinder.com/forecast/kornwerderzand"
+                          target="_blank"
+                          ><img
+                            src="images/windfinder.png"
+                            class="windfinder"
+                            alt="Windguru"
+                        /></a>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="column2 Kornwerderzand">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                  <td class="column3 Kornwerderzand">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                  <td class="column4 Kornwerderzand">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                  <td class="column5 Kornwerderzand">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                  <td class="column6 Kornwerderzand">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="column1">
+                    <div class="spots">
+                      <a
+                        href="https://www.google.de/maps/place/Kite+spot+Medemblik/@52.7552809,5.1214893,17.25z/data=!4m13!1m7!3m6!1s0x47c8b02938c16263:0xf4f06b2520b57751!2sMedemblik,+Niederlande!3b1!8m2!3d52.7674467!4d5.1069178!3m4!1s0x47c8af64320e3a85:0x7cb5fdeebc5b0e98!8m2!3d52.7553243!4d5.12382?hl=de"
+                        target="_blank"
+                        >Medemblik</a
+                      >
+                      <div class="logoimages">
+                        <a
+                          href="https://www.windguru.cz/?gn=2748352"
+                          target="_blank"
+                          ><img
+                            src="images/windguru.png"
+                            class="windguru"
+                            alt="Windguru"
+                        /></a>
+                        <a
+                          href="https://de.windfinder.com/forecast/marina_medemblik"
+                          target="_blank"
+                          ><img
+                            src="images/windfinder.png"
+                            class="windfinder"
+                            alt="Windguru"
+                        /></a>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="column2 Medemblik">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                  <td class="column3 Medemblik">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                  <td class="column4 Medemblik">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                  <td class="column5 Medemblik">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                  <td class="column6 Medemblik">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="column1">
+                    <div class="spots">
+                      <a
+                        href="https://www.google.de/maps/place/Parking+lot,+2202+ER+Noordwijk,+Niederlande/@52.2434926,4.4289581,18.75z/data=!4m13!1m7!3m6!1s0x47c5c065662ef21f:0xabb7ddd63f99dbe6!2sNoordwijk+aan+Zee,+Noordwijk,+Niederlande!3b1!8m2!3d52.2413411!4d4.431955!3m4!1s0x47c5c07905b95d3b:0xef451ee6eef15200!8m2!3d52.2434138!4d4.4290087?hl=de"
+                        target="_blank"
+                        >Noordwijk aan Zee</a
+                      >
+                      <div class="logoimages">
+                        <a href="https://www.windguru.cz/575" target="_blank"
+                          ><img
+                            src="images/windguru.png"
+                            class="windguru"
+                            alt="Windguru"
+                        /></a>
+                        <a
+                          href="https://de.windfinder.com/forecast/noordwijk_aan_zee"
+                          target="_blank"
+                          ><img
+                            src="images/windfinder.png"
+                            class="windfinder"
+                            alt="Windguru"
+                        /></a>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="column2 NoordwijkaanZee">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                  <td class="column3 NoordwijkaanZee">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                  <td class="column4 NoordwijkaanZee">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                  <td class="column5 NoordwijkaanZee">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                  <td class="column6 NoordwijkaanZee">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="column1">
+                    <div class="spots">
+                      <a
+                        href="https://www.google.de/maps/place/Parkeerplaats+Tweede+Slag/@51.8755333,4.0476988,17.5z/data=!4m13!1m7!3m6!1s0x47c453f3e40f28c3:0x7849f509c7d4e9cb!2sRockanje,+Niederlande!3b1!8m2!3d51.8719333!4d4.0683056!3m4!1s0x47c45405735ff811:0xacb6efced2916c17!8m2!3d51.8767367!4d4.0471188?hl=de"
+                        target="_blank"
+                        >Rockanje</a
+                      >
+                      <div class="logoimages">
+                        <a href="https://www.windguru.cz/500879" target="_blank"
+                          ><img
+                            src="images/windguru.png"
+                            class="windguru"
+                            alt="Windguru"
+                        /></a>
+                        <a
+                          href="https://de.windfinder.com/forecast/rockanje"
+                          target="_blank"
+                          ><img
+                            src="images/windfinder.png"
+                            class="windfinder"
+                            alt="Windguru"
+                        /></a>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="column2 Rockanje">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                  <td class="column3 Rockanje">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                  <td class="column4 Rockanje">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                  <td class="column5 Rockanje">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                  <td class="column6 Rockanje">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="column1">
+                    <div class="spots">
+                      <a
+                        href="https://www.google.de/maps/place/Watersport+Brouwersdam/@51.7618381,3.8510103,16.5z/data=!4m8!1m2!2m1!1sBrouwersdam!3m4!1s0x47c4f73bcddf1ed9:0x2278abc05ca50cea!8m2!3d51.7621211!4d3.8521921?hl=de"
+                        target="_blank"
+                        >Brouwersdam</a
+                      >
+                      <div class="logoimages">
+                        <a href="https://www.windguru.cz/97" target="_blank"
+                          ><img
+                            src="images/windguru.png"
+                            class="windguru"
+                            alt="Windguru"
+                        /></a>
+                        <a
+                          href="https://de.windfinder.com/forecast/brouwersdam"
+                          target="_blank"
+                          ><img
+                            src="images/windfinder.png"
+                            class="windfinder"
+                            alt="Windguru"
+                        /></a>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="column2 Brouwersdam">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                  <td class="column3 Brouwersdam">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                  <td class="column4 Brouwersdam">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                  <td class="column5 Brouwersdam">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                  <td class="column6 Brouwersdam">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="column1">
+                    <div class="spots">
+                      <a
+                        href="https://www.google.de/maps/place/Parking+lot,+Strandweg,+4311+NN+Bruinisse,+Niederlande/@51.6782511,4.1350111,16.5z/data=!4m5!3m4!1s0x47c44349491aabcb:0xce2b0b8ee62abb2d!8m2!3d51.6787251!4d4.1384822?hl=de"
+                        target="_blank"
+                        >Grevelingendam</a
+                      >
+                      <div class="logoimages">
+                        <a
+                          href="https://www.windguru.cz/?gn=2755340"
+                          target="_blank"
+                          ><img
+                            src="images/windguru.png"
+                            class="windguru"
+                            alt="Windguru"
+                        /></a>
+                        <a
+                          href="https://de.windfinder.com/forecast/grevelingenmeer_grevelingendam"
+                          target="_blank"
+                          ><img
+                            src="images/windfinder.png"
+                            class="windfinder"
+                            alt="Windguru"
+                        /></a>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="column2 Grevelingendam">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                  <td class="column3 Grevelingendam">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                  <td class="column4 Grevelingendam">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                  <td class="column5 Grevelingendam">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                  <td class="column6 Grevelingendam">
+                    <i class="fa-solid fa-square-xmark"></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="js/main.js"></script>
+    <!--===============================================================================================-->
+    <script src="dash.js"></script>
+    <!--===============================================================================================-->
+    <script src="Login/login.js"></script>
+  </body>
+</html>

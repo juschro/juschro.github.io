@@ -1,0 +1,29 @@
+.spots {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.windguru {
+  width: 40px;
+}
+.windfinder {
+  width: 40px;
+}
+@media (hover: hover) {
+  a:hover {
+    transform: scale(1.2);
+  }
+  .windguru:hover {
+    transition: all 0.25s ease;
+    transform: scale(1.2);
+  }
+
+  .windfinder:hover {
+    transition: all 0.25s ease;
+    transform: scale(1.2);
+  }
+
+  .fa-square-check:hover {
+    transform: scale(1.2);
+  }
+}
